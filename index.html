@@ -124,6 +124,27 @@ body::after{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;bac
 .featured-content{position:absolute;left:1.6rem;right:1.6rem;bottom:1.4rem;z-index:2;display:flex;align-items:flex-end;justify-content:space-between;gap:1rem}
 .featured-title{font-family:var(--display);font-size:clamp(2.4rem,4vw,5rem);line-height:.9;text-transform:uppercase}
 .play-pill{font-family:var(--head);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;font-weight:900;color:#05070b;background:var(--yellow);border-radius:999px;padding:.9rem 1rem;white-space:nowrap}
+.featured-meta{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1rem}
+.featured-meta span{font-family:var(--head);font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;font-weight:900;color:var(--muted);border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.055);padding:.55rem .72rem}
+.featured-meta b{color:var(--text);font-weight:900;margin-right:.25rem}
+
+/* SERVICES */
+#services{padding:4rem 4rem 6rem;position:relative}
+.services-shell{max-width:1420px;margin:auto}
+.services-header{display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;margin-bottom:2rem}
+.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.service-card{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:26px;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.028));padding:1.25rem;min-height:220px;box-shadow:0 18px 48px rgba(0,0,0,.18);transition:transform .32s ease,border-color .32s ease,box-shadow .32s ease}
+.service-card::before{content:"";position:absolute;inset:auto -40px -60px auto;width:150px;height:150px;border-radius:50%;background:radial-gradient(circle,rgba(0,229,255,.18),transparent 66%);transition:transform .35s ease,opacity .35s ease}
+.service-card:nth-child(2n)::before{background:radial-gradient(circle,rgba(255,45,120,.18),transparent 66%)}
+.service-card:nth-child(3n)::before{background:radial-gradient(circle,rgba(255,229,0,.14),transparent 66%)}
+.service-card:hover{transform:translateY(-7px);border-color:rgba(255,255,255,.22);box-shadow:0 28px 80px rgba(0,0,0,.28)}
+.service-card:hover::before{transform:scale(1.18);opacity:1}
+.service-icon{width:46px;height:46px;border-radius:15px;display:grid;place-items:center;margin-bottom:1rem;font-family:var(--head);font-size:.62rem;letter-spacing:.1em;font-weight:900;color:#05070b;background:var(--cyan);box-shadow:0 0 26px rgba(0,229,255,.18)}
+.service-card:nth-child(2n) .service-icon{background:var(--pink);color:#fff}.service-card:nth-child(3n) .service-icon{background:var(--yellow);color:#05070b}.service-card:nth-child(4n) .service-icon{background:var(--lime);color:#05070b}
+.service-title{font-family:var(--display);font-size:2.05rem;line-height:.9;text-transform:uppercase;margin-bottom:.7rem;color:var(--text)}
+.service-copy{font-size:.92rem;line-height:1.65;color:var(--muted);margin-bottom:1rem}
+.service-tags{display:flex;flex-wrap:wrap;gap:.45rem}
+.service-tags span{font-family:var(--head);font-size:.48rem;letter-spacing:.12em;text-transform:uppercase;font-weight:900;color:var(--text);border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.045);padding:.42rem .55rem}
 
 /* WORK */
 #work{padding:7rem 4rem;position:relative}
@@ -160,7 +181,15 @@ body::after{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;bac
 .proj-card[data-cat="Logo Animation"] .proj-cat{color:var(--lime);background:rgba(184,255,60,.08)}
 .proj-year{color:var(--text);background:rgba(255,255,255,.06)}
 .proj-info{position:absolute;left:1rem;right:1rem;bottom:1rem;z-index:4;display:flex;align-items:flex-end;justify-content:space-between;gap:.8rem}
-.proj-title{font-family:var(--display);font-size:clamp(1.45rem,2.2vw,2.6rem);line-height:.92;text-transform:uppercase;max-width:70%}
+.proj-title{font-family:var(--display);font-size:clamp(1.45rem,2.2vw,2.6rem);line-height:.92;text-transform:uppercase;max-width:100%}
+.proj-text{min-width:0;max-width:78%}
+.proj-details{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.55rem}
+.proj-details span{font-family:var(--head);font-size:.46rem;letter-spacing:.08em;text-transform:uppercase;font-weight:800;color:var(--muted);border:1px solid rgba(255,255,255,.1);border-radius:999px;background:rgba(255,255,255,.045);padding:.34rem .45rem;line-height:1.2}
+.proj-details b{color:var(--text);font-weight:900;margin-right:.2rem}
+#panel-yt-short .proj-details{display:none}
+#panel-yt-short .proj-title{font-size:1.35rem}
+#panel-yt-short .proj-text{max-width:100%}
+#panel-yt-short .proj-link-btn{display:none}
 .proj-link-btn{font-family:var(--head);font-size:.54rem;letter-spacing:.14em;text-transform:uppercase;font-weight:900;color:#05070b;background:var(--text);border-radius:999px;padding:.65rem .78rem;white-space:nowrap;transition:all .25s ease}
 .proj-card:hover .proj-link-btn{background:var(--cyan);box-shadow:0 0 22px rgba(0,229,255,.2)}
 .proj-play{position:absolute;left:50%;top:50%;z-index:5;width:62px;height:62px;border-radius:50%;transform:translate(-50%,-44%) scale(.92);display:grid;place-items:center;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(14px);opacity:0;transition:all .25s ease}
@@ -202,7 +231,7 @@ body::after{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;bac
 .tool-logo{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;flex:0 0 44px;font-family:var(--head);font-size:.78rem;font-weight:900;letter-spacing:-.03em;color:#05070b;background:var(--cyan);box-shadow:0 0 24px rgba(0,229,255,.16)}
 .tool-name{font-family:var(--head);font-size:.65rem;line-height:1.3;text-transform:uppercase;font-weight:900;color:var(--text)}
 .tool-type{display:block;font-family:var(--body);font-size:.74rem;text-transform:none;letter-spacing:0;font-weight:400;color:var(--muted);margin-top:.2rem}
-.ae{background:#9999ff}.pr{background:#c58cff}.dvr{background:#67d6ff}.ps{background:#31a8ff}.ai{background:#ff9a00}.me{background:#6d84ff}.st{background:#80ffdb}.id{background:#ff4fa2}.skill-logo{background:linear-gradient(135deg,var(--cyan),var(--pink));color:#fff}.fi{background:#ff725e}.gem{background:#89b4ff}.freepik{background:#00d084}.kling{background:#f6ff5b}.veo{background:#8ab4ff}.hf{background:#ff80d5}.seed{background:#c2ff54}.el{background:#fff;color:#05070b}
+.ae{background:#9999ff}.pr{background:#c58cff}.dvr{background:#67d6ff}.ps{background:#31a8ff}.ai{background:#ff9a00}.me{background:#6d84ff}.st{background:#80ffdb}.id{background:#ff4fa2}.skill-logo{background:linear-gradient(135deg,var(--cyan),var(--pink));color:#fff}.fi{background:#ff725e}.gem{background:#89b4ff}.freepik{background:#00d084}.kling{background:#f6ff5b}.veo{background:#8ab4ff}.hf{background:#ff80d5}.seed{background:#c2ff54}.el{background:#fff;color:#05070b}.gpt{background:#10a37f;color:#fff}.claude{background:#d97757;color:#fff}
 
 /* CONTACT */
 #contact{padding:7rem 4rem}
@@ -220,8 +249,8 @@ body::after{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;bac
 
 footer{border-top:1px solid var(--line);padding:2rem 4rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;color:var(--muted);background:#05070b}.footer-logo{font-family:var(--display);font-size:2rem;color:var(--text);letter-spacing:.1em}.footer-copy{font-family:var(--head);font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;font-weight:900}
 
-@media(max-width:1100px){.hero-inner,.featured-wrap,.about-inner,.contact-inner{grid-template-columns:1fr}.hero-panel{max-width:560px}.work-header{align-items:flex-start;flex-direction:column}.tool-panel{grid-template-columns:repeat(2,1fr)}.proj-card,#panel-product-ads .proj-card,#panel-logo-animation .proj-card,#panel-yt-long .proj-card,#panel-ai .proj-card,#panel-all .proj-card:nth-child(1),#panel-all .proj-card:nth-child(2){grid-column:span 6;aspect-ratio:16/9}.site-nav{padding:1rem 2rem}#hero,#featured,#work,#about,#contact{padding-inline:2rem}.about-visual{max-width:420px}}
-@media(max-width:760px){body{cursor:auto}.cursor,.cursor-ring{display:none}.nav-links a:not(.resume-link){display:none}.site-nav{padding:.9rem 1rem}.hero-title{font-size:clamp(4.2rem,18vw,7rem)}.hero-inner{gap:2rem}.hero-panel{min-height:440px}.hero-frame{min-height:416px}.hero-card-title{font-size:2.6rem}.section-title,.about-title,.contact-title{font-size:clamp(3.4rem,15vw,5.3rem)}#hero{padding:7.2rem 1rem 3rem}#featured,#work,#about,#contact{padding:4.5rem 1rem}.proj-grid{grid-template-columns:1fr}.proj-card,#panel-product-ads .proj-card,#panel-logo-animation .proj-card,#panel-yt-long .proj-card,#panel-ai .proj-card,#panel-all .proj-card:nth-child(1),#panel-all .proj-card:nth-child(2){grid-column:span 1}.work-tabs{justify-content:flex-start}.tool-panel{grid-template-columns:1fr}.about-stats{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.form-group.full{grid-column:span 1}.featured-content{display:block}.play-pill{display:inline-block;margin-top:1rem}footer{padding:1.5rem 1rem}}
+@media(max-width:1100px){.hero-inner,.featured-wrap,.about-inner,.contact-inner{grid-template-columns:1fr}.services-grid{grid-template-columns:repeat(2,1fr)}.services-header{align-items:flex-start;flex-direction:column}.hero-panel{max-width:560px}.work-header{align-items:flex-start;flex-direction:column}.tool-panel{grid-template-columns:repeat(2,1fr)}.proj-card,#panel-product-ads .proj-card,#panel-logo-animation .proj-card,#panel-yt-long .proj-card,#panel-ai .proj-card,#panel-all .proj-card:nth-child(1),#panel-all .proj-card:nth-child(2){grid-column:span 6;aspect-ratio:16/9}.site-nav{padding:1rem 2rem}#hero,#featured,#services,#work,#about,#contact{padding-inline:2rem}.about-visual{max-width:420px}}
+@media(max-width:760px){body{cursor:auto}.cursor,.cursor-ring{display:none}.nav-links a:not(.resume-link){display:none}.site-nav{padding:.9rem 1rem}.hero-title{font-size:clamp(4.2rem,18vw,7rem)}.hero-inner{gap:2rem}.hero-panel{min-height:440px}.hero-frame{min-height:416px}.hero-card-title{font-size:2.6rem}.section-title,.about-title,.contact-title{font-size:clamp(3.4rem,15vw,5.3rem)}#hero{padding:7.2rem 1rem 3rem}#featured,#services,#work,#about,#contact{padding:4.5rem 1rem}.services-grid{grid-template-columns:1fr}.proj-grid{grid-template-columns:1fr}.proj-card,#panel-product-ads .proj-card,#panel-logo-animation .proj-card,#panel-yt-long .proj-card,#panel-ai .proj-card,#panel-all .proj-card:nth-child(1),#panel-all .proj-card:nth-child(2){grid-column:span 1}.work-tabs{justify-content:flex-start}.tool-panel{grid-template-columns:1fr}.about-stats{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.form-group.full{grid-column:span 1}.featured-content{display:block}.play-pill{display:inline-block;margin-top:1rem}footer{padding:1.5rem 1rem}}
 @media(max-width:520px){#panel-yt-short .proj-grid{grid-template-columns:repeat(2,1fr);gap:.8rem}.nav-logo{font-size:1.7rem}.hero-sub{font-size:1.06rem}.btn{width:100%;justify-content:center}.contact-socials .social-link{width:100%;text-align:center}.about-sticker{right:10px;bottom:10px}}
 </style>
 </head>
@@ -233,6 +262,7 @@ footer{border-top:1px solid var(--line);padding:2rem 4rem;display:flex;align-ite
   <a class="nav-logo" href="#hero">AP<span>V</span></a>
   <ul class="nav-links">
     <li><a href="#featured">Showreel</a></li>
+    <li><a href="#services">Services</a></li>
     <li><a href="#work">Work</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -292,17 +322,43 @@ footer{border-top:1px solid var(--line);padding:2rem 4rem;display:flex;align-ite
 <section id="featured">
   <div class="featured-wrap">
     <div class="reveal">
-      <div class="section-kicker">Featured</div>
-      <h2 class="section-title">Watch The<br><span>Motion</span></h2>
-      <p class="section-copy">A cinematic-first portfolio experience built around video, strong project categories and fast visual proof.</p>
+      <div class="section-kicker">Featured Showreel</div>
+      <h2 class="section-title">Watch The<br><span>Reel</span></h2>
+      <p class="section-copy">A fast cinematic cut of motion design, product ads, YouTube visuals and AI-powered storytelling — built to show the range, rhythm and finishing quality of my work.</p>
     </div>
     <a class="featured-card reveal" href="#" data-video-id="JHbsH1rO0Pw" data-is-short="0">
-      <img src="https://i.ytimg.com/vi/JHbsH1rO0Pw/maxresdefault.jpg" alt="Featured motion work">
+      <img src="https://i.ytimg.com/vi/JHbsH1rO0Pw/maxresdefault.jpg" alt="Featured showreel by Abiram P Vinayan">
       <div class="featured-content">
-        <div><span class="neon-tag">Featured Work</span><div class="featured-title">Selected Motion Piece</div></div>
-        <span class="play-pill">▶ Play</span>
+        <div>
+          <span class="neon-tag">Featured Showreel</span>
+          <div class="featured-title">Motion Reel Cut</div>
+          <div class="featured-meta"><span><b>Role</b> Motion Design / Edit</span><span><b>Tools</b> Ae, Pr, AI Workflow</span><span><b>Type</b> Showreel</span></div>
+        </div>
+        <span class="play-pill">▶ Play Reel</span>
       </div>
     </a>
+  </div>
+</section>
+
+<section id="services">
+  <div class="services-shell">
+    <div class="services-header reveal">
+      <div>
+        <div class="section-kicker">Services</div>
+        <h2 class="section-title">What I<br><span>Create</span></h2>
+      </div>
+      <p class="section-copy">From scroll-stopping ads to AI-assisted visual production, these are the core creative services I can handle from concept to final delivery.</p>
+    </div>
+    <div class="services-grid">
+      <article class="service-card reveal"><div class="service-icon">AD</div><h3 class="service-title">Product Ads</h3><p class="service-copy">High-impact promotional videos crafted for product launches, social media and brand campaigns.</p><div class="service-tags"><span>Motion</span><span>Edit</span><span>Launch</span></div></article>
+      <article class="service-card reveal"><div class="service-icon">AI</div><h3 class="service-title">AI Video Ads</h3><p class="service-copy">AI-generated visuals refined with editing, compositing, sound and cinematic pacing.</p><div class="service-tags"><span>Kling</span><span>Veo</span><span>Prompt</span></div></article>
+      <article class="service-card reveal"><div class="service-icon">YT</div><h3 class="service-title">YouTube Content</h3><p class="service-copy">Long-form edits, shorts and motion packages designed to retain attention and improve watchability.</p><div class="service-tags"><span>Long Form</span><span>Shorts</span><span>Graphics</span></div></article>
+      <article class="service-card reveal"><div class="service-icon">LG</div><h3 class="service-title">Logo Animation</h3><p class="service-copy">Clean, memorable logo reveals and brand motion IDs for intros, promos and social placements.</p><div class="service-tags"><span>Identity</span><span>Reveal</span><span>Brand</span></div></article>
+      <article class="service-card reveal"><div class="service-icon">BF</div><h3 class="service-title">Brand Films</h3><p class="service-copy">Story-driven visuals that translate brand messages into cinematic motion and clear narratives.</p><div class="service-tags"><span>Story</span><span>Visuals</span><span>Direction</span></div></article>
+      <article class="service-card reveal"><div class="service-icon">MG</div><h3 class="service-title">Motion Graphics</h3><p class="service-copy">Kinetic titles, animated explainers, transitions and visual systems for polished video content.</p><div class="service-tags"><span>After Effects</span><span>Design</span><span>Animation</span></div></article>
+      <article class="service-card reveal"><div class="service-icon">EL</div><h3 class="service-title">E-Learning Videos</h3><p class="service-copy">Clear animated learning content that simplifies complex topics through structured visual storytelling.</p><div class="service-tags"><span>Explainer</span><span>Course</span><span>Clarity</span></div></article>
+      <article class="service-card reveal"><div class="service-icon">CD</div><h3 class="service-title">Creative Direction</h3><p class="service-copy">Visual direction, AI-assisted concepts, style framing and delivery-focused quality control.</p><div class="service-tags"><span>Concept</span><span>Style</span><span>QC</span></div></article>
+    </div>
   </div>
 </section>
 
@@ -377,6 +433,8 @@ footer{border-top:1px solid var(--line);padding:2rem 4rem;display:flex;align-ite
           <div class="tool-card"><span class="tool-logo st">S3</span><span class="tool-name">Storyline 360<span class="tool-type">E-learning content</span></span></div>
         </div>
         <div class="tool-panel" id="panel-ai-tools">
+          <div class="tool-card"><span class="tool-logo gpt">GPT</span><span class="tool-name">ChatGPT<span class="tool-type">Prompting, scripting & ideation</span></span></div>
+          <div class="tool-card"><span class="tool-logo claude">Cl</span><span class="tool-name">Claude AI<span class="tool-type">Writing, planning & refinement</span></span></div>
           <div class="tool-card"><span class="tool-logo fi">Fi</span><span class="tool-name">Adobe Firefly<span class="tool-type">AI image generation</span></span></div>
           <div class="tool-card"><span class="tool-logo gem">G</span><span class="tool-name">Gemini Nano Banana Pro<span class="tool-type">AI creative assistant</span></span></div>
           <div class="tool-card"><span class="tool-logo freepik">Fp</span><span class="tool-name">Freepik<span class="tool-type">AI visuals and assets</span></span></div>
@@ -513,6 +571,16 @@ const driveThumbs=id=>[
   `https://drive.google.com/thumbnail?id=${id}&sz=w640`
 ];
 const driveEmbed=id=>`https://drive.google.com/file/d/${id}/preview`;
+function getProjectDetails(v){
+  const details={
+    'Product AD':{role:'Motion / Edit / AI',tools:'Ae, Pr, AI Tools',type:'Product Ad'},
+    'AI Video':{role:'AI Visuals / Prompt / Edit',tools:'Kling, Veo, Firefly',type:'AI Video'},
+    'Logo Animation':{role:'Logo Motion / Polish',tools:'After Effects, Illustrator',type:'Logo Animation'},
+    'Long Form':{role:'Editing / Motion Graphics',tools:'Premiere Pro, Ae',type:'YouTube Long Form'},
+    'Shorts':{role:'Short Edit / Motion',tools:'Premiere Pro, Ae',type:'Short-Form Video'}
+  };
+  return details[v.cat]||{role:'Motion Design',tools:'Ae, Pr',type:v.cat};
+}
 function makeCard(v,idx){
   const card=document.createElement('a');
   card.className='proj-card reveal';
@@ -522,13 +590,14 @@ function makeCard(v,idx){
   const title=v.title||`${v.cat} #${idx+1}`;
   const isDrive=v.type==='drive';
   const thumbs=isDrive?driveThumbs(v.id):youtubeThumbs(v.id);
+  const d=getProjectDetails(v);
   if(isDrive){card.dataset.embedUrl=driveEmbed(v.id);}else{card.dataset.videoId=v.id;}
   card.innerHTML=`
     <div class="proj-fallback"><div class="proj-fallback-inner"><div class="proj-fallback-icon">${isDrive?'G':'▶'}</div><div class="proj-fallback-text">${isDrive?'Drive Video':'Video Preview'}</div></div></div>
     <img class="proj-thumb-img" src="${thumbs[0]}" alt="${title}" loading="lazy">
     <div class="proj-meta-top"><span class="proj-cat">${v.cat}</span><span class="proj-year">2026</span></div>
     <div class="proj-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-    <div class="proj-info"><div class="proj-title">${title}</div><div class="proj-link-btn">Watch</div></div>`;
+    <div class="proj-info"><div class="proj-text"><div class="proj-title">${title}</div><div class="proj-details"><span><b>Role</b>${d.role}</span><span><b>Tools</b>${d.tools}</span><span><b>Type</b>${d.type}</span></div></div><div class="proj-link-btn">Watch</div></div>`;
   const img=card.querySelector('.proj-thumb-img');
   let thumbIndex=0;
   img.addEventListener('error',()=>{thumbIndex++; if(thumbIndex<thumbs.length){img.src=thumbs[thumbIndex];} else {card.classList.add('thumb-error');}});
