@@ -531,7 +531,10 @@ const longForm=[
   {type:'youtube',id:'ll2V1cqu8zU',cat:'Long Form',title:'YouTube Long Form #2'},
   {type:'youtube',id:'RxjELohs2ok',cat:'Long Form',title:'YouTube Long Form #3'},
   {type:'youtube',id:'0KVRbmXfidE',cat:'Long Form',title:'YouTube Long Form #4'},
-  {type:'youtube',id:'6mpmIyZvCSc',cat:'Long Form',title:'YouTube Long Form #5'}
+  {type:'youtube',id:'6mpmIyZvCSc',cat:'Long Form',title:'YouTube Long Form #5'},
+  {type:'youtube',id:'9ovCJFi_Ah8',cat:'Long Form',title:'YouTube Long Form #6',start:618},
+  {type:'youtube',id:'r1y6hjZE-jM',cat:'Long Form',title:'YouTube Long Form #7',start:583},
+  {type:'youtube',id:'s7kgnNyZh1U',cat:'Long Form',title:'YouTube Long Form #8',start:9}
 ];
 const shorts=[
   {type:'youtube',id:'MO48WAqzaEo',cat:'Shorts',title:'Shorts #1'},{type:'youtube',id:'z1nILnUTIZA',cat:'Shorts',title:'Shorts #2'},{type:'youtube',id:'AjxrIG-_pFo',cat:'Shorts',title:'Shorts #3'},
@@ -592,6 +595,7 @@ function makeCard(v,idx){
   const thumbs=isDrive?driveThumbs(v.id):youtubeThumbs(v.id);
   const d=getProjectDetails(v);
   if(isDrive){card.dataset.embedUrl=driveEmbed(v.id);}else{card.dataset.videoId=v.id;}
+  if(v.start){card.dataset.start=v.start;}
   card.innerHTML=`
     <div class="proj-fallback"><div class="proj-fallback-inner"><div class="proj-fallback-icon">${isDrive?'G':'▶'}</div><div class="proj-fallback-text">${isDrive?'Drive Video':'Video Preview'}</div></div></div>
     <img class="proj-thumb-img" src="${thumbs[0]}" alt="${title}" loading="lazy">
@@ -611,7 +615,7 @@ appendCards('shorts-grid',shorts);
 appendCards('ads-grid',productAds);
 appendCards('ai-grid',aiVideos);
 appendCards('logo-grid',logoAnimations);
-appendCards('all-grid',[longForm[0],longForm[1],...productAds,...logoAnimations,...aiVideos.slice(0,4),shorts[0],shorts[1],shorts[2]]);
+appendCards('all-grid',[longForm[0],longForm[1],longForm[5],longForm[6],longForm[7],...productAds,...logoAnimations,...aiVideos.slice(0,4),shorts[0],shorts[1],shorts[2]]);
 
 const modal=document.getElementById('modal'),mbox=document.getElementById('modal-box'),mframe=document.getElementById('modal-iframe');
 function openEmbed(url,isShort){mframe.src=url;mbox.classList.toggle('short',isShort);modal.classList.add('open');document.body.style.overflow='hidden'}
@@ -623,7 +627,7 @@ document.addEventListener('click',e=>{
   const card=e.target.closest('.proj-card,.featured-card');
   if(!card)return;
   if(card.dataset.embedUrl){e.preventDefault();openEmbed(card.dataset.embedUrl,card.dataset.isShort==='1');}
-  if(card.dataset.videoId){e.preventDefault();openEmbed(`https://www.youtube.com/embed/${card.dataset.videoId}?autoplay=1&rel=0`,card.dataset.isShort==='1');}
+  if(card.dataset.videoId){e.preventDefault();const start=card.dataset.start?`&start=${card.dataset.start}`:'';openEmbed(`https://www.youtube.com/embed/${card.dataset.videoId}?autoplay=1&rel=0${start}`,card.dataset.isShort==='1');}
 });
 
 const contactForm=document.getElementById('contact-form');
